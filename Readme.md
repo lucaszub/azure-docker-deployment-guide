@@ -76,10 +76,10 @@ Cette commande génère un JSON contenant les informations nécessaires pour l'a
 ## 4. Ajouter les identifiants Azure dans les secrets GitHub
 Pour utiliser ces identifiants dans GitHub Actions, nous devons ajouter le JSON comme un secret dans ton dépôt GitHub.
 
-- 1. Va dans les Paramètres de ton dépôt GitHub.
-- 2. Clique sur Secrets puis New repository secret.
-- 3. Nom du secret : AZURE_CREDENTIALS
-- 4. Colle le JSON généré par la commande précédente dans la valeur du secret.
+- Va dans les Paramètres de ton dépôt GitHub.
+- Clique sur Secrets puis New repository secret.
+- Nom du secret : AZURE_CREDENTIALS
+- Colle le JSON généré par la commande précédente dans la valeur du secret.
 Cela permettra à GitHub Actions de s'authentifier auprès d'Azure pour déployer l'application.
 
 ![alt text](image-1.png)
@@ -149,4 +149,5 @@ jobs:
 - **Déploiement sur Azure Web App** : Déploie l'image Docker depuis ACR vers Azure Web App.
 
 Conclusion
+
 Avec ces étapes, nous avons déployé une application **FastAPI** sur **Azure** en utilisant **Azure Container Registry (ACR)** pour stocker l'image Docker et **Azure Web App** pour le déploiement. Nous avons également configuré un pipeline CI/CD avec **GitHub Actions** pour automatiser le processus de build, de push et de déploiement.
