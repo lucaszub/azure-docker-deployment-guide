@@ -1,7 +1,11 @@
 # Déploiement d'une application FastAPI sur Azure avec Azure CLI et GitHub Actions
+
+![alt text](image-2.png)
+
 Dans ce projet, nous allons déployer une application FastAPI sur Azure en utilisant Azure Container Registry (ACR) pour stocker l'image Docker et Azure Web App pour déployer l'application automatiquement via GitHub Actions.
 
 Voici un guide pour y parvenir.
+
 ***
 ### Prérequis
 - Un compte Azure actif.
