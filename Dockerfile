@@ -1,17 +1,18 @@
-# Utilise une image Python de base
+# Utilisation de l'image Python officielle
 FROM python:3.9-slim
 
-# Définit le répertoire de travail
+# Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# Copie les fichiers de votre projet dans le container
-COPY . /app/
-
-# Installe les dépendances
+# Copier le fichier de dépendances et installer les packages
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose le port utilisé par FastAPI
-EXPOSE 8000
+# Copier le reste des fichiers de l'application
+COPY . .
 
-# Commande pour lancer l'application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Exposer le port 80 pour FastAPI
+EXPOSE 80
+
+# Lancer l'application avec uvicorn
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
